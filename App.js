@@ -1,19 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+
+
+import Form from './components/Form';
+import List from './components/List';
 
 function App() {
-  return (
-    <div>
-      <h1>Hello Dojo!</h1>
-      <h2>Things I need to do:</h2>
-      <ul>
-        <li>Learn React</li>
-        <li>Climb Mt. Everest</li>
-        <li>Run a marathon</li>
-        <li>Feed the Dogs</li>
-      </ul>
-    </div>
-  );
+  const [boxArray, setBoxArray] = useState([]);
+  return <div className="App">
+      <Form boxArray = {boxArray} setBoxArray = {setBoxArray} />
+      <List boxArray = {boxArray} />
+    </div>;
 }
 
 export default App;
